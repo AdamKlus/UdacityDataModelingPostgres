@@ -6,6 +6,10 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    - opens json song file from the provided filepath
+    - inserts data from json into songs and artists tables
+    """
     # open song file
     df = pd.read_json(filepath, lines=True)
 
@@ -19,6 +23,11 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    - opens json log file from the provided filepath
+    - inserts data from json into time and users tables
+    - inserts data from json and data from artists and songs tables into songplays table
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -61,6 +70,10 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    - finds all the json files in provided directory
+    - processes all files with function provided by user
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
