@@ -1,10 +1,10 @@
-## Sparkify Database
+# Sparkify Database
 
 Sparkify is an imaginary music streaming company. 
 
 As an exercise at udacity course I was asked to develop ETL processes for analytics database in Postgress.
 
-### Database schema design and ETL process
+## Database schema design and ETL process
 Database have 2 sources (JSON): `log_data` and `song_data`. 
 
 ETL is processing both source files into star schema database optimised for queries on song play analysis
@@ -25,7 +25,7 @@ Dimension Tables
 5. time - timestamps of records in songplays broken down into specific units
 `start_time`, `hour`, `day`, `week`, `month`, `year`, `weekday`
 
-### Files in repository
+## Files in repository
 
 `slq_queries.py` - queries definitions
 
@@ -37,7 +37,7 @@ Dimension Tables
 
 `data/log_data` - source data used to populate time and users tables
 
-### How to run the python scripts
+## How to run the python scripts
 
 First run `create_tables.py`, then `etl.py` to populate tables.
 
