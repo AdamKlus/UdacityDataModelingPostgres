@@ -83,9 +83,12 @@ def main():
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
 
-    process_data(cur, conn, filepath='data/song_data', func=process_song_file)
-    process_data(cur, conn, filepath='data/log_data', func=process_log_file)
-
+#    process_data(cur, conn, filepath='data/song_data', func=process_song_file)
+#    process_data(cur, conn, filepath='data/log_data', func=process_log_file)
+    cur.execute("SELECT * FROM songplays WHERE artist_id IS NOT NULL")
+    results = cur.fetchall()
+    print(results)
+    
     conn.close()
 
 
